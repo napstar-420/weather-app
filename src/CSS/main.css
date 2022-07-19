@@ -29,31 +29,57 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 10%;
+  height: 2em;
   align-items: center;
 }
 
 .header h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: var(--primary-font);
 }
 
 .header .search_container {
+  height: 100%;
+}
+
+.header .search_subContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border: 2px solid brown;
+  border-radius: 5px;
 }
 
 .header .searchCity {
-  width: 20em;
+  width: 17em;
+  height: 100%;
   padding: 0.3em 0.5em;
   font-size: 0.9rem;
-  border-radius: 5px;
   border: none;
   outline: none;
-  background-color: #d5d4d470;
+  background-color: rgba(255, 255, 255, 0.377);
   font-family: var(--secondary-font);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .header .searchCity:focus {
   background-color: rgba(255, 255, 255, 0.719);
+}
+
+.search_btn {
+  width: 3em;
+  height: 100%;
+  background-color: brown;
+  border: none;
+  font-size: 0.9rem;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  cursor: pointer;
+}
+
+.search_btn:hover {
+  background-color: cadetblue;
 }
 
 .header .suggesstion_container {
@@ -74,6 +100,6 @@
 }
 
 .header .suggesstion_container li:hover {
-  background-color: antiquewhite;
+  background-color: rgba(250, 235, 215, 0.432);
   cursor: pointer;
 }

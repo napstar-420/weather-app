@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Suggestions from "./Suggestions.js";
+import { BsGlobe } from "react-icons/bs";
+import { IoSearch } from "react-icons/io5";
 
 const Header = () => {
   const [value, setValue] = useState("");
@@ -33,21 +35,28 @@ const Header = () => {
 
   return (
     <div className="header">
-      <h2>Geo Weather</h2>
+      <h2 style={{ display: "flex", alignItems: "center" }}>
+        <BsGlobe style={{ marginRight: "0.3rem" }} /> Geo Weather
+      </h2>
       <div className="search_container">
-        <input
-          className="searchCity"
-          type="text"
-          value={value}
-          placeholder="Search city..."
-          onFocus={() => {
-            setFocus(true);
-          }}
-          onBlur={() => {
-            setFocus(false);
-          }}
-          onChange={handleChange}
-        />
+        <div className="search_subContainer">
+          <input
+            className="searchCity"
+            type="text"
+            value={value}
+            placeholder="Search city..."
+            onFocus={() => {
+              setFocus(true);
+            }}
+            onBlur={() => {
+              setFocus(false);
+            }}
+            onChange={handleChange}
+          />
+          <button className="search_btn">
+            <IoSearch />
+          </button>
+        </div>
         <Suggestions focus={focus} reply={reply} />
       </div>
     </div>
