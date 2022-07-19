@@ -34,18 +34,22 @@ const Header = () => {
   return (
     <div className="header">
       <h2>Geo Weather</h2>
-      <input
-        type="text"
-        value={value}
-        onFocus={() => {
-          setFocus(true);
-        }}
-        onBlur={() => {
-          setFocus(false);
-        }}
-        onChange={handleChange}
-      />
-      <Suggestions focus={focus} reply={reply} />
+      <div className="search_container">
+        <input
+          className="searchCity"
+          type="text"
+          value={value}
+          placeholder="Search city..."
+          onFocus={() => {
+            setFocus(true);
+          }}
+          onBlur={() => {
+            setFocus(false);
+          }}
+          onChange={handleChange}
+        />
+        <Suggestions focus={focus} reply={reply} />
+      </div>
     </div>
   );
 };

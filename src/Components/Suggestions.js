@@ -5,7 +5,7 @@ const Suggestions = ({ reply, focus }) => {
     if (reply !== undefined && reply.length !== 0) {
       console.log(reply);
       return (
-        <ul>
+        <ul className="suggesstion_container">
           {reply.map((city) => {
             return (
               <li key={city.id}>
@@ -17,7 +17,7 @@ const Suggestions = ({ reply, focus }) => {
       );
     } else {
       return (
-        <ul>
+        <ul className="suggesstion_container">
           <li>Loading...</li>
         </ul>
       );
