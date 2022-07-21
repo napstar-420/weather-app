@@ -24,3 +24,5 @@ yarn-error.log*
 
 exampleResponse.js
 exampleResponse.json
+
+/src/API
