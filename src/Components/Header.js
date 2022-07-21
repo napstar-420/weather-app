@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import Suggestions from "./Suggestions.js";
-import { options, geoDB_URL } from "../API/fetchCities.js";
+import Suggestions from "./SubComponents/Suggestions.js";
 import { BsGlobe } from "react-icons/bs";
 import { IoSearch } from "react-icons/io5";
+import { options, geoDB_URL } from "../API/fetchCities.js";
 
-const Header = () => {
-  const [value, setValue] = useState("");
-  const [reply, setReply] = useState([]);
+const Header = ({ value, setValue, reply, setReply, handleSearch }) => {
   const [focus, setFocus] = useState(false);
-
   const handleChange = (e) => {
     setValue(e.target.value);
     if (value < 3) {
@@ -43,11 +40,11 @@ const Header = () => {
             }}
             onChange={handleChange}
           />
-          <button className="search_btn">
+          <button className="search_btn" onClick={handleSearch}>
             <IoSearch />
           </button>
         </div>
-        <Suggestions focus={focus} reply={reply} />
+        <Suggestions focus={focus} reply={reply} setValue={setValue} />
       </div>
     </div>
   );
