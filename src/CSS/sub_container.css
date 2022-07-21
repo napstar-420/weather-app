@@ -2,3 +2,138 @@
   --primary-font: "Roboto", "sans-serif";
   --secondary-font: "Open Sans", sans-serif;
 }
+
+.sub_container {
+  width: 100%;
+  margin-top: 2.5em;
+}
+
+.sub_container h1 {
+  text-align: center;
+  font-family: var(--primary-font);
+  color: #fff;
+  font-weight: 300;
+}
+
+.sub_container section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather_condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.weather_condition h2 {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--primary-font);
+  font-weight: 600;
+}
+.weather_condition h3 {
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0.5em;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.weather_condition h3 span {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.additional_information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.additional_information h2 {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--secondary-font);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  margin-bottom: 0.5em;
+}
+
+.additional_information_subContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.additional_information_subContainer h3 {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--secondary-font);
+  font-weight: 100;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5em 0.7em;
+}
+
+.additional_information_subContainer h3 span {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hourly_forecast_container {
+  width: 100%;
+}
+
+.hourly_forecast_container h2 {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--secondary-font);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  margin-bottom: 0.5em;
+}
+
+.hourly_forecast_subContainer {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  column-gap: 2em;
+}
+
+.hourly_forecast_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hourly_forecast_item h2 {
+  font-size: 1.5rem;
+  margin: 0%;
+}
+
+.hourly_forecast_item p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: monospace;
+  margin-bottom: 0.5em;
+}
+
+.hourly_forecast_item h3 {
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 550px) {
+  .hourly_forecast_subContainer {
+    justify-content: space-around;
+  }
+}

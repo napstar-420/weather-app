@@ -4,7 +4,12 @@ import AdditionalInformation from "./SubComponents/AdditionalInformation";
 import HourlyForecast from "./SubComponents/HourlyForecast";
 
 const SubContainer = ({ weather }) => {
-  if (weather !== undefined && Object.keys(weather).length !== 0) {
+  if (
+    weather !== null &&
+    Object.keys(weather).length !== 0 &&
+    weather.code !== 429 &&
+    weather.code !== 404
+  ) {
     return (
       <div className="sub_container">
         <h1>
@@ -18,7 +23,11 @@ const SubContainer = ({ weather }) => {
       </div>
     );
   } else {
-    return <h1>Search for your City</h1>;
+    return (
+      <h1 className="no_weather_heading">
+        Type name of your City <i>(Tokyo, JP)</i>
+      </h1>
+    );
   }
 };
 

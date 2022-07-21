@@ -10,14 +10,6 @@ const MainContainer = ({
   handleSearch,
   weather,
 }) => {
-  const underlineStyle = {
-    width: "100%",
-    height: "3px",
-    borderRadius: "5px",
-    backgroundColor: "#fff",
-    margin: "1em auto",
-  };
-
   return (
     <div className="main_container">
       <Header
@@ -27,7 +19,6 @@ const MainContainer = ({
         setReply={setReply}
         handleSearch={handleSearch}
       />
-      <div className="underline" style={underlineStyle} />
       <SubContainer weather={weather} />
     </div>
   );

@@ -7,7 +7,7 @@ const Suggestions = ({ reply, focus, setValue }) => {
   if (focus) {
     if (reply !== undefined && reply.length !== 0) {
       return (
-        <ul className="suggesstion_container">
+        <ul className="suggestion_container">
           {reply.map((city) => {
             return (
               <li
@@ -24,7 +24,7 @@ const Suggestions = ({ reply, focus, setValue }) => {
       );
     } else {
       return (
-        <ul className="suggesstion_container">
+        <ul className="suggestion_container">
           <li>Loading...</li>
         </ul>
       );

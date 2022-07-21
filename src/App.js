@@ -10,16 +10,19 @@ function App() {
   const [weather, setWeather] = useState({});
 
   const handleSearch = () => {
-    console.log("clicked");
     let searchValue = value;
-    searchValue = searchValue.replace(",", "%2C").replace(" ", "%20");
-    fetch(
-      `https://community-open-weather-map.p.rapidapi.com/forecast?q=${searchValue}&units=metric&lang=en`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setWeather(response))
-      .catch((err) => console.error(err));
+    if (searchValue.trim() !== "") {
+      searchValue = searchValue.replace(",", "%2C").replace(" ", "%20");
+      fetch(
+        `https://community-open-weather-map.p.rapidapi.com/forecast?q=${searchValue}&units=metric&lang=en`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setWeather(response))
+        .catch((err) => console.log(err));
+    } else {
+      alert("You think i am a fool");
+    }
   };
 
   return (
