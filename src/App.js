@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainContainer from "./Components/MainContainer";
 import "./CSS/main.css";
 import "./CSS/sub_container.css";
 import { options } from "./API/fetchWeather";
 
 function App() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Tokyo, JP");
   const [reply, setReply] = useState([]);
   const [weather, setWeather] = useState({});
 
@@ -24,6 +24,10 @@ function App() {
       alert("You think i am a fool");
     }
   };
+
+  useEffect(() => {
+    handleSearch();
+  }, []);
 
   return (
     <div className="App">
