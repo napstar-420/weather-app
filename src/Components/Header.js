@@ -46,10 +46,10 @@ const Header = () => {
             value={value}
             placeholder="Search city..."
             onFocus={() => {
-              setFocus(true);
+              setFocus(!focus);
             }}
             onBlur={() => {
-              setFocus(false);
+              setFocus(!focus);
             }}
             onChange={handleChange}
           />
