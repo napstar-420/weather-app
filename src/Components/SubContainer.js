@@ -4,11 +4,17 @@ import AdditionalInformation from "./SubComponents/AdditionalInformation";
 import HourlyForecast from "./SubComponents/HourlyForecast";
 
 const SubContainer = ({ weather }) => {
+  if (Object.keys(weather).length === 0) {
+    return (
+      <h1 className="no_weather_heading">
+        Type name of your City <i>(Tokyo, JP)</i>
+      </h1>
+    );
+  }
   if (
-    weather !== null &&
     Object.keys(weather).length !== 0 &&
-    weather.code !== 429 &&
-    weather.code !== 404
+    weather.cod !== 401 &&
+    weather.message.search("you have exceeded") === 1
   ) {
     return (
       <div className="sub_container">
@@ -25,7 +31,7 @@ const SubContainer = ({ weather }) => {
   } else {
     return (
       <h1 className="no_weather_heading">
-        Type name of your City <i>(Tokyo, JP)</i>
+        <i>(Oops, Something went wrong)</i>
       </h1>
     );
   }
