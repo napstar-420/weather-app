@@ -7,23 +7,22 @@ const WeatherCondition = ({ weather }) => {
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
           className="current_img"
-          src={`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`}
+          src={`https://www.weatherbit.io/static/img/icons/${weather.data[0].weather.icon}.png`}
           width="150px"
           alt=""
         />
         <div>
           <h2>
-            {weather.list[0].main.temp} <RiCelsiusLine />
+            {weather.data[0].temp} <RiCelsiusLine />
           </h2>
-          <h2>{weather.list[0].weather[0].main}</h2>
+          <h2>{weather.data[0].weather.description}</h2>
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <h3>{weather.list[0].weather[0].description}</h3>
         <h3>
           Feels like:&nbsp;
           <span>
-            {weather.list[0].main.feels_like} <RiCelsiusLine />
+            {weather.data[0].app_max_temp} <RiCelsiusLine />
           </span>
         </h3>
       </div>

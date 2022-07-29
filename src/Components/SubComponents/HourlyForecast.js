@@ -2,26 +2,46 @@ import React from "react";
 import { RiCelsiusLine } from "react-icons/ri";
 
 const HourlyForecast = ({ weather }) => {
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  function getDateAndMonth(string) {
+    let result = string.substr(8, 2) + " ";
+    return result.concat(month[parseInt(string.substr(5, 2)) - 1]);
+  }
+
   return (
     <div className="hourly_forecast_container">
-      <h2>Hourly Forecast</h2>
+      <h2>Daily Forecast</h2>
       <div className="hourly_forecast_subContainer">
-        {weather.list.map((forecast, index) => {
-          if (index > 0 && index < 9) {
+        {weather.data.map((forecast, index) => {
+          if (index > 0 && index < 8) {
             return (
               <div className="hourly_forecast_item" key={index}>
                 <img
-                  src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`}
+                  src={`https://www.weatherbit.io/static/img/icons/${forecast.weather.icon}.png`}
                   alt="weather-icon"
                 />
-                <p>{forecast.dt_txt.substring(10, 16)}</p>
+                <p>{getDateAndMonth(forecast.valid_date)}</p>
                 <h2>
-                  {forecast.main.temp} <RiCelsiusLine />
+                  {forecast.temp} <RiCelsiusLine />
                 </h2>
-                <h3>{forecast.weather[0].main}</h3>
+                <h3>{forecast.weather.description}</h3>
               </div>
             );
-          } else return <></>;
+          }
         })}
       </div>
     </div>

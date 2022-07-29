@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MainContainer from "./Components/MainContainer";
 import "./CSS/main.css";
 import "./CSS/sub_container.css";
-import { options } from "./API/fetchWeather";
+import { API_KEY } from "./API/fetchWeather";
 
 function App() {
   const [value, setValue] = useState("Tokyo, JP");
@@ -12,10 +12,9 @@ function App() {
   const handleSearch = () => {
     let searchValue = value;
     if (searchValue.trim() !== "") {
-      searchValue = searchValue.replace(",", "%2C").replace(" ", "%20");
+      searchValue = searchValue.replace(" ", "");
       fetch(
-        `https://community-open-weather-map.p.rapidapi.com/forecast?q=${searchValue}&units=metric&lang=en`,
-        options
+        `https://api.weatherbit.io/v2.0/forecast/daily?city=${searchValue}&key=${API_KEY}`
       )
         .then((response) => response.json())
         .then((response) => setWeather(response))
@@ -24,10 +23,6 @@ function App() {
       alert("You think i am a fool");
     }
   };
-
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   return (
     <div className="App">

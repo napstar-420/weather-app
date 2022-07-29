@@ -9,34 +9,34 @@ const AdditionalInformation = ({ weather }) => {
         <h3>
           Min Temp
           <span>
-            {weather.list[0].main.temp_min} <RiCelsiusLine />
+            {weather.data[0].min_temp} <RiCelsiusLine />
           </span>
         </h3>
         <h3>
           Max Temp
           <span>
-            {weather.list[0].main.temp_max} <RiCelsiusLine />
+            {weather.data[0].max_temp} <RiCelsiusLine />
           </span>
         </h3>
         <h3>
           Pressure
-          <span> {weather.list[0].main.pressure}hPa</span>
+          <span> {weather.data[0].pres}mb</span>
         </h3>
         <h3>
           humidity
-          <span> {weather.list[0].main.humidity}%</span>
+          <span> {weather.data[0].rh}%</span>
         </h3>
         <h3>
           Wind Speed
-          <span> {weather.list[0].wind.speed}m/s</span>
+          <span> {weather.data[0].wind_spd}m/s</span>
         </h3>
         <h3>
           Visibility
-          <span> {weather.list[0].visibility}km</span>
+          <span> {weather.data[0].vis}km</span>
         </h3>
         <h3>
           Cloudiness
-          <span>{weather.list[0].clouds.all}%</span>
+          <span>{weather.data[0].clouds}%</span>
         </h3>
       </div>
     </div>

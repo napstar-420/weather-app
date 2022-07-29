@@ -11,15 +11,11 @@ const SubContainer = ({ weather }) => {
       </h1>
     );
   }
-  if (
-    Object.keys(weather).length !== 0 &&
-    weather.cod !== 401 &&
-    weather.message.search("you have exceeded") === 1
-  ) {
+  if (Object.keys(weather).length !== 0) {
     return (
       <div className="sub_container">
         <h1>
-          {weather.city.name}, {weather.city.country}
+          {weather.city_name}, {weather.country_code}
         </h1>
         <section>
           <WeatherCondition weather={weather} />
