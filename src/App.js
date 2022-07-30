@@ -6,7 +6,7 @@ import { API_KEY } from "./API/fetchWeather";
 
 function App() {
   /*A value variable will store the user input*/
-  const [value, setValue] = useState("Tokyo, JP");
+  const [value, setValue] = useState("");
 
   /*A variable named reply will store the response when fetch cities from api*/
   const [reply, setReply] = useState([]);

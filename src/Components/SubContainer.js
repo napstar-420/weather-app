@@ -7,9 +7,23 @@ const SubContainer = ({ weather }) => {
   /* Check if Weather is empty if yes show default text else show show weather */
   if (Object.keys(weather).length === 0) {
     return (
-      <h1 className="no_weather_heading">
-        Type name of your City <i>(Tokyo, JP)</i>
-      </h1>
+      <div className="no_weather_container">
+        <h2>For Better User Experience</h2>
+        <ul>
+          <li>Geo weather is using free Api's</li>
+          <li>Type only one character per second</li>
+          <li>If your searched city is not showing up</li>
+          <li>
+            Try deleting one alphabet or adding one alphabet to your search
+          </li>
+          <li>Or type your city name with country code</li>
+          <li>For Example: Lahore, PK</li>
+          <li>Having issues feel free to get in touch</li>
+          <li>
+            <a href="mailto:zohaibkhan1162002@gmail.com">Send Mail</a>
+          </li>
+        </ul>
+      </div>
     );
   }
 
@@ -20,8 +34,10 @@ const SubContainer = ({ weather }) => {
           {weather.city_name}, {weather.country_code}
         </h1>
         <section>
-          <WeatherCondition weather={weather} />
-          <AdditionalInformation weather={weather} />
+          <div className="main_top_container">
+            <WeatherCondition weather={weather} />
+            <AdditionalInformation weather={weather} />
+          </div>
           <HourlyForecast weather={weather} />
         </section>
       </div>

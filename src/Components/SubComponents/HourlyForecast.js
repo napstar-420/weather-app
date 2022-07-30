@@ -30,17 +30,19 @@ const HourlyForecast = ({ weather }) => {
           if (index > 0 && index < 8) {
             return (
               <div className="hourly_forecast_item" key={index}>
+                <p>{getDateAndMonth(forecast.valid_date)}</p>
                 <img
                   src={`https://www.weatherbit.io/static/img/icons/${forecast.weather.icon}.png`}
                   alt="weather-icon"
                 />
-                <p>{getDateAndMonth(forecast.valid_date)}</p>
                 <h2>
                   {forecast.temp} <RiCelsiusLine />
                 </h2>
                 <h3>{forecast.weather.description}</h3>
               </div>
             );
+          } else {
+            return null;
           }
         })}
       </div>
