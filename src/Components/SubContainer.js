@@ -4,6 +4,7 @@ import AdditionalInformation from "./SubComponents/AdditionalInformation";
 import HourlyForecast from "./SubComponents/HourlyForecast";
 
 const SubContainer = ({ weather }) => {
+  /* Check if Weather is empty if yes show default text else show show weather */
   if (Object.keys(weather).length === 0) {
     return (
       <h1 className="no_weather_heading">
@@ -11,6 +12,7 @@ const SubContainer = ({ weather }) => {
       </h1>
     );
   }
+
   if (Object.keys(weather).length !== 0) {
     return (
       <div className="sub_container">
