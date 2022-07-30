@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Suggestions from "./SubComponents/Suggestions.js";
-import { BsGlobe } from "react-icons/bs";
 import { IoSearch } from "react-icons/io5";
 import { options, geoDB_URL } from "../API/fetchCities.js";
 
@@ -37,9 +36,7 @@ const Header = ({ value, setValue, reply, setReply, handleSearch }) => {
 
   return (
     <div className="header">
-      <h2 style={{ display: "flex", alignItems: "center" }}>
-        <BsGlobe style={{ marginRight: "0.3rem" }} /> Geo Weather
-      </h2>
+      <h2 style={{ display: "flex", alignItems: "center" }}>Geo Weather</h2>
       <div className="search_container">
         <div className="search_subContainer">
           <input
