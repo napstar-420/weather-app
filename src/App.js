@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import MainContainer from "./Components/MainContainer";
-import "./CSS/main.css";
-import "./CSS/sub_container.css";
 import { API_KEY } from "./API/fetchWeather";
+import Home from "./Components/home.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   /*A value variable will store the user input*/
@@ -39,17 +38,11 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {/* App Will have a sub container name MainContainer Pass props to main container */}
-      <MainContainer
-        value={value}
-        setValue={setValue}
-        reply={reply}
-        setReply={setReply}
-        handleSearch={handleSearch}
-        weather={weather}
-      />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
