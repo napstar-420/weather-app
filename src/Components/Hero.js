@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { geoDB_URL, options } from "../API/fetchCities";
+import { useNavigate } from "react-router-dom";
 
 const Hero = ({ value, setValue, handleSearch, reply, setReply }) => {
+  const navigate = useNavigate();
   const [focus, setFocus] = useState(false);
   const handleChange = (e) => {
     setValue(e.target.value); /* Store user typed value */
@@ -18,13 +20,12 @@ const Hero = ({ value, setValue, handleSearch, reply, setReply }) => {
         .catch((err) => {
           console.error(err);
         });
-      console.log(reply);
     }
   };
   return (
-    <div className="text-white w-screen h-screen absolute left-0 grid place-items-center">
+    <div className="text-white w-screen h-[90vh] lg:h-screen lg:absolute left-0 grid place-items-center">
       <div className=" w-max relative">
-        <h1 className="text-5xl font-thin">Free Online Weather 24/7</h1>
+        <h1 className="text-2xl sm:text-5xl font-thin">Free Online Weather 24/7</h1>
         <ul className="text-left my-4">
           <li className="text-sm">
             For better experience type 1 character / second{" "}

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .weather_icon {
+        @apply font-bold mr-2
+    }
+    .additional_info {
+        @apply flex items-center font-thin text-base
+    }
+    .additional_info span {
+        @apply flex ml-2 font-normal text-lg
+    }
+}

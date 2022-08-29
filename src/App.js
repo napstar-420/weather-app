@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { API_KEY } from "./API/fetchWeather";
 import Home from "./Components/home.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Weather from './Components/Weather.js'
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 
 function App() {
   /*A value variable will store the user input*/
@@ -35,12 +36,14 @@ function App() {
     } else {
       alert("You think i am a fool");
     }
+    console.log(weather)
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home value={value} setValue={setValue} handleSearch={handleSearch} reply={reply} setReply={setReply}/>} />
+        <Route index element={<Home value={value} setValue={setValue} handleSearch={handleSearch} reply={reply} setReply={setReply} weather={weather}/>} />
+        <Route path="/weather" element={<Weather weather={weather}/>}/>
       </Routes>
     </BrowserRouter>
   );
