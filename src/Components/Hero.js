@@ -2,10 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { geoDB_URL, options } from "../API/fetchCities";
-import { useNavigate } from "react-router-dom";
 
 const Hero = ({ value, setValue, handleSearch, reply, setReply }) => {
-  const navigate = useNavigate();
   const [focus, setFocus] = useState(false);
   const handleChange = (e) => {
     setValue(e.target.value); /* Store user typed value */
