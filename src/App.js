@@ -40,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
+        <Route index element={<Home value={value} setValue={setValue} handleSearch={handleSearch} reply={reply} setReply={setReply}/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -7,7 +7,7 @@ import {FaLinkedinIn} from 'react-icons/fa';
 
 const Header = () => {
   return (
-    <div className='flex justify-between py-4 px-10'>
+    <div className='flex justify-between py-4 px-10 fixed top-0 w-screen z-20'>
         <h3 className='text-white text-lg font-semibold z-10'>GEO WEATHER</h3>
         <div className='flex items-center text-white z-10'>
             <a href="#" target="_blank" rel="noopener noreferrer" className='p-2 mx-2 border border-white rounded-full hover:bg-white hover:text-black transition'><BsInstagram className='text-'/></a>
